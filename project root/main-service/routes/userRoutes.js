@@ -30,4 +30,7 @@ router.post('/login', [
 
 router.get('/protected', auth, userController.getProtectedData);
 
+// Add the new route for generating API key
+router.post('/generate-api-key', auth, userController.generateApiKey);
+
 module.exports = router;
