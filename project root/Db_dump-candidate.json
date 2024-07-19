@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6699fead11720eeb324811ac"
+  },
+  "first_name": "Raju",
+  "last_name": "ram",
+  "email": "raju@example.com",
+  "user_id": {
+    "$oid": "66997fc241f7cbb6817378a7"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669a23da11720eeb324811b0"
+  },
+  "first_name": "Raju",
+  "last_name": "ram",
+  "email": "raju@example.com",
+  "user_id": {
+    "$oid": "66997fc241f7cbb6817378a7"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669a5ee11964d68277735149"
+  },
+  "first_name": "Arun",
+  "last_name": "ram",
+  "email": "arun@example.com",
+  "user_id": {
+    "$oid": "66997fc241f7cbb6817378a7"
+  },
+  "__v": 0
+}]

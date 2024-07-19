@@ -1,0 +1,685 @@
+API_Documentation
+
+1.Open Postman
+2.Create a new request for each endpoint
+3.Set the appropriate method (GET/POST)
+4.Enter the full URL (including base URL)
+5.Set headers as specified for each endpoint
+6.For POST requests, enter the required JSON body
+7.For protected routes, use the JWT token received from login/register in the Authorization header
+8.For public API routes, use the provided API key in the X-API-Key header
+9.Click "Send" to make the request
+10.Check the response for the expected status code and content
+
+Note:-
+Remember to start both the main service and public API service before testing. 
+
+
+{
+	"info": {
+		"_postman_id": "c475bc73-4320-4eb7-8e62-cb6d4016d3a6",
+		"name": "recruit_CRM_Technical-Assesment",
+		"description": "This project implements a JWT authentication system using Node.js, including a main service for user and candidate management, and a public API microservice.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34442281",
+		"_collection_link": "https://recruit-crm-assesment.postman.co/workspace/recruit-crm-assesment-Workspace~381a07bf-d107-4859-9690-86eb73485894/collection/34442281-c475bc73-4320-4eb7-8e62-cb6d4016d3a6?action=share&source=collection_link&creator=34442281"
+	},
+	"item": [
+		{
+			"name": "1.Testing-Registration",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Testing-user-Akshay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Akshay\",\r\n  \"last_name\": \"Ram\",\r\n  \"email\": \"ram@example.com\",\r\n  \"password\": \"Akshay123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/registration ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"registration "
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e5-i3LH8maRx/MwzhMoUDy7tP6WRDE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jul 2024 20:49:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzMzU3NDYsImV4cCI6MTcyMTMzOTM0Nn0.SyFVubppaNhFBcnlaWXIiOnwfN26d27HTtR6oF7w5UQ\"\n}"
+				},
+				{
+					"name": "Testing-user-Akash",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Akash\",\r\n  \"last_name\": \"Ram\",\r\n  \"email\": \"akash@example.com\",\r\n  \"password\": \"Akash123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e5-xmAxwjT7bUm8j+4nMvqd4yoUVHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jul 2024 21:19:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5ODZkMjQxZjdjYmI2ODE3Mzc4YWMiLCJpYXQiOjE3MjEzMzc1NTQsImV4cCI6MTcyMTM0MTE1NH0._n9--AjITr_n6RKdwvuKcqkktl6hSvFxSAfqD9MgGqE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2.Test - login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Test - login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ram@example.com\",\r\n  \"password\": \"Akshay123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "217"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d9-lwoqcw0nVxoZz8a6AbbsuHGEcc4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jul 2024 21:21:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzMzc2NzYsImV4cCI6MTcyMTM0MTI3Nn0.-pYa8r3spJ-tmpWITS7r0MhSUZsZtVZuEJ1h0g1SkHU\"\n}"
+				}
+			]
+		},
+		{
+			"name": "4.Testing-Adding a Candidate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Testing-Adding a Candidate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzNjc2MDksImV4cCI6MTcyMTM3MTIwOX0.ywxkCJQ00rxIcGwmIieIMF0DV4dYkkdCbzR_DXdWvoc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Raju\",\r\n  \"last_name\": \"ram\",\r\n  \"email\": \"raju@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"candidates"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c7-zDU2Y77wo1BlgYqr/sDIcvjBz2k\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 05:50:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Candidate added successfully\",\n    \"candidate\": {\n        \"first_name\": \"Raju\",\n        \"last_name\": \"ram\",\n        \"email\": \"raju@example.com\",\n        \"user_id\": \"66997fc241f7cbb6817378a7\",\n        \"_id\": \"6699fead11720eeb324811ac\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "5.Testing - getting_Candidate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Testing - getting_Candidate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzNjc2MDksImV4cCI6MTcyMTM3MTIwOX0.ywxkCJQ00rxIcGwmIieIMF0DV4dYkkdCbzR_DXdWvoc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"candidates"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-z1XX+Y6loV/b0NnCaibz/cQP/2I\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 05:53:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"candidates\": [\n        {\n            \"_id\": \"6699fead11720eeb324811ac\",\n            \"first_name\": \"Raju\",\n            \"last_name\": \"ram\",\n            \"email\": \"raju@example.com\",\n            \"user_id\": \"66997fc241f7cbb6817378a7\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "3.Product_route",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzNjc2MDksImV4cCI6MTcyMTM3MTIwOX0.ywxkCJQ00rxIcGwmIieIMF0DV4dYkkdCbzR_DXdWvoc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/protected",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"protected"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7a-HKABEXo1/esdjDDKbuImGgqHjbo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 05:42:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Access to protected data successful\",\n    \"user\": {\n        \"firstName\": \"Akshay\",\n        \"lastName\": \"Ram\",\n        \"email\": \"ram@example.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "6.generate_API_Key",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njk5N2ZjMjQxZjdjYmI2ODE3Mzc4YTciLCJpYXQiOjE3MjEzODMyODcsImV4cCI6MTcyMTM4Njg4N30.hldAWS8nk0ny1sjUSr_a9-woL9ttMoxMTpipfi6qKwE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/generate-api-key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"generate-api-key"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-gnm10QXof0+wF1tJhmaZcXtuXsY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 10:03:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"API key generated successfully\",\n    \"api_key\": \"fff3b706182736ec8d578ac4c33cae5bf179b855699c07d4ec7fa9378402e15d\"\n}"
+				}
+			]
+		},
+		{
+			"name": "7.Access _public API-profile",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Access - public API",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "1056cdfacff9f69177e8b7851e9dac7fef71be1a6ce3306b708ad8cd5ef043bd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/public/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"public",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-QKBPMgLkEd9kjnZEmKmeUxcyfMA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 11:17:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"first_name\": \"Akshay\",\n    \"last_name\": \"Ram\",\n    \"email\": \"ram@example.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "8.get-public_API-candidate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get-public_API-candidate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "fff3b706182736ec8d578ac4c33cae5bf179b855699c07d4ec7fa9378402e15d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/public/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"public",
+								"candidates"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Jul 2024 16:16:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot GET /public/candidates</pre>\n    </body>\n</html>"
+				}
+			]
+		}
+	]
+}
